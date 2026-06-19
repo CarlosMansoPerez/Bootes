@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boötes cafés to go! | Specialty Coffee & Matcha Bar</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header id="navbar">
+        <div>
+            <img class="logo-icono" src="./img/logo.png" alt="">
+            <a href="#" class="logo">Boötes<span>.</span></a>
+        </div>
+
+        <nav>
+            <a href="#concepto">Concepto</a>
+            <a href="#filosofia">Filosofía</a>
+            <a href="#carta">La Carta</a>
+            <a href="#visitanos">Contacto</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-video-container">
+            <video autoplay muted loop playsinline poster="./img/fachada.png">
+                <source src="./img/video.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="hero-content">
+            <p class="tagline reveal">Marbella · Cafés to go</p>
+            <h1 class="reveal">Coffee &<br>Matcha Bar</h1>
+            <p class="reveal" style="font-weight: 500;">Granos de especialidad seleccionados, matcha ceremonial puro y repostería artesanal para llevar.</p>
+        </div>
+    </section>
+
+    <section id="concepto" class="concept">
+        <div class="grid-2">
+            <div class="concept-text reveal">
+                <h3>Esencia artesanal a tu propio ritmo.</h3>
+                <p>En Boötes entendemos el movimiento de la vida moderna. Nos alejamos de las prisas industriales para ofrecerte una pausa de calidad sublime, diseñada exclusivamente bajo el concepto <strong>"to go"</strong>.</p>
+                <p>Cada receta está calibrada al milímetro: desde la presión del agua en nuestras extracciones de café espresso de origen único, hasta la temperatura perfecta para batir el matcha ceremonial traído de Uji, Japón.</p>
+            </div>
+            <div class="img-container reveal">
+                <img src="./img/bootes.png" alt="Café de Especialidad en Marbella">
+            </div>
+        </div>
+    </section>
+
+    <section id="filosofia" class="philosophy">
+        <div class="section-title-center reveal">
+            <span>Nuestros pilares</span>
+            <h2>Obsesión por el origen</h2>
+        </div>
+        
+        <div class="split-benefits">
+            <div class="benefit-card reveal">
+                <span class="icon-label matcha-label">Grado Ceremonial</span>
+                <h3>Matcha de Cultivo Orgánico</h3>
+                <p>Trabajamos en exclusiva con hojas de tencha de primera cosecha recolectadas a la sombra. El resultado es un color verde vibrante, un perfil aterciopelado en boca y notas intensas de umami, sin amargor.</p>
+            </div>
+            <div class="benefit-card reveal">
+                <span class="icon-label coffee-label">84+ Puntos SCA</span>
+                <h3>Café de Especialidad</h3>
+                <p>Nuestros granos rotan según la temporada de cosecha global. Apoyamos fincas de comercio justo y procesos de tostado ligero-medio que preservan los matices afrutados, florales y limpios de cada origen.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="carta" class="menu-section">
+        <div class="section-title-center reveal">
+            <span>El Menú</span>
+            <h2>Nuestra Carta</h2>
+        </div>
+
+        <div class="menu-tabs reveal">
+            <button class="tab-btn active" onclick="openMenu(event, 'tab-matcha')">Matcha Bar</button>
+            <button class="tab-btn" onclick="openMenu(event, 'tab-coffee')">Specialty Coffee</button>
+            <button class="tab-btn" onclick="openMenu(event, 'tab-bakery')">Bites & Goods</button>
+        </div>
+
+        <div id="tab-matcha" class="menu-container active reveal">
+            <div class="menu-card-item">
+                <div class="menu-details">
+                    <h4>Ceremonial Clean Matcha</h4>
+                    <p>Matcha tradicional batido con agua pura a 80°C. Limpio, energético y antioxidante.</p>
+                </div>
+                <div class="menu-price">4,00€</div>
+            </div>
+            <div class="menu-card-item">
+                <div class="menu-details">
+                    <h4>Signature Matcha Latte</h4>
+                    <p>Matcha premium combinado con tu leche vegetal preferida (avena recomendada).</p>
+                </div>
+                <div class="menu-price">4,80€</div>
+            </div>
+            <div class="menu-card-item">
+                <div class="menu-details">
+                    <h4>Iced Strawberry Matcha</h4>
+                    <p>Una base fresca de puré artesanal de fresas orgánicas, leche y capa superior de matcha.</p>
+                </div>
+                <div class="menu-price">5,50€</div>
+            </div>
+            <div class="menu-card-item">
+                <div class="menu-details">
+                    <h4>Matcha Espresso Fusion</h4>
+                    <p>Bebida tricolor: Espresso de origen, leche texturizada y un shot concentrado de matcha.</p>
+                </div>
+                <div class="menu-price">5,20€</div>
+            </div>
+        </div>
+
+        <div id="tab-coffee" class="menu-container reveal">
+            <div class="menu-card-item">
+                <div class="menu-details">
+                    <h4>Espresso Doble</h4>
+                    <p>Extracción perfecta de nuestro lote de origen seleccionado de la semana.</p>
+                </div>
+                <div class="menu-price">2,50€</div>
+            </div>
+            <div class="menu-card-item">
+                <div class="menu-details">
+                    <h4>Flat White</h4>
+                    <p>Doble shot de espresso cubierto con una capa fina de microespuma sedosa.</p>
+                </div>
+                <div class="menu-price">3,80€</div>
+            </div>
+            <div class="menu-card-item">
+                <div class="menu-details">
+                    <h4>Iced Latte</h4>
+                    <p>Café de especialidad vertido sobre hielo y leche fresca texturizada.</p>
+                </div>
+                <div class="menu-price">4,20€</div>
+            </div>
+            <div class="menu-card-item">
+                <div class="menu-details">
+                    <h4>Cold Brew Pure</h4>
+                    <p>Extracción lenta en frío durante 18 horas. Notas intensas a chocolate y baja acidez.</p>
+                </div>
+                <div class="menu-price">4,50€</div>
+            </div>
+        </div>
+
+        <div id="tab-bakery" class="menu-container reveal">
+            <div class="menu-card-item">
+                <div class="menu-details">
+                    <h4>Matcha Cookie Block</h4>
+                    <p>Galleta de estilo Nueva York horneada a diario con té matcha y trozos de chocolate blanco.</p>
+                </div>
+                <div class="menu-price">3,50€</div>
+            </div>
+            <div class="menu-card-item">
+                <div class="menu-details">
+                    <h4>Croissant de Mantequilla Francesa</h4>
+                    <p>Hofaldrado artesanal perfecto, crujiente por fuera y tierno por dentro.</p>
+                </div>
+                <div class="menu-price">2,80€</div>
+            </div>
+            <div class="menu-card-item">
+                <div class="menu-details">
+                    <h4>Vegan Banana Bread</h4>
+                    <p>Bizcocho de plátano maduro con nueces y un toque sutil de canela de Ceylán.</p>
+                </div>
+                <div class="menu-price">3,80€</div>
+            </div>
+            <div class="menu-card-item">
+                <div class="menu-details">
+                    <h4>Cardamom Bun</h4>
+                    <p>Bollo trenzado tradicional escandinavo aromatizado con cardamomo fresco molido.</p>
+                </div>
+                <div class="menu-price">4,00€</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gallery">
+        <div class="gallery-grid">
+            <div class="img-container reveal">
+                <img src="./img/1.png" alt="Matcha Latte Arte">
+            </div>
+            <div class="img-container reveal">
+                <img src="./img/2.png" alt="Espresso Extraction">
+            </div>
+            <div class="img-container reveal">
+                <img src="./img/3.png" alt="Matcha whisk">
+            </div>
+            <div class="img-container reveal">
+                <img src="./img/4.png" alt="Coffee Shop Minimalist">
+            </div>
+        </div>
+    </section>
+
+    <section id="visitanos" class="visit">
+        <div class="visit-grid">
+            <div class="visit-info reveal">
+                <h2>Pasa a por el tuyo.</h2>
+                
+                <div class="info-block">
+                    <h3>Ubicación</h3>
+                    <p>C/ Caridad, 10,<br>29603 Marbella, Málaga</p>
+                </div>
+
+                <div class="info-block">
+                    <h3>Concepto</h3>
+                    <p>Takeaway & Grab and Go Bar</p>
+                </div>
+
+                <a href="https://maps.app.goo.gl/cDscnpyLypTVruqNA" target="_blank" class="btn-maps">Ver en Google Maps</a>
+            </div>
+
+            <div class="schedule-box reveal">
+                <h3>Horarios de Apertura</h3>
+                
+                <div class="schedule-row">
+                    <span class="day">Lunes</span>
+                    <span class="time">10:00 – 15:00</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Martes</span>
+                    <span class="time">10:00 – 15:00</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Miércoles</span>
+                    <span class="time">10:00 – 15:00</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Jueves</span>
+                    <span class="time">10:00 – 15:00</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Viernes</span>
+                    <span class="time">10:00 – 15:00</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Sábado</span>
+                    <span class="time">Cerrado</span>
+                </div>
+                <div class="schedule-row">
+                    <span class="day">Domingo</span>
+                    <span class="time">Cerrado</span>
+                </div>
+
+                <p class="schedule-notice">* Nota: El horario habitual está sujeto a variaciones durante festividades locales y nacionales.</p>
+            </div>
+        </div>
+    </section>
+
+    
+
+    <footer>
+        <p>© 2026 Boötes cafés to go!. Marbella.</p>
+        <p>Diseñado y construido por <a href="https://carlosmanso.es" style="text-decoration: none; color: rgb(0, 74, 0);">carlosmanso.es</a></p>
+
+        <div id="google_translate_element"></div>
+
+<button class="btn-lang-toggle" id="btnLangToggle" aria-label="Cambiar idioma">
+  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+  <span>Idioma</span>
+</button>
+
+<div class="lang-menu-wrapper" id="langMenuWrapper">
+  <div class="lang-menu-overlay" id="langMenuOverlay"></div>
+  <div class="lang-menu-content">
+    <div class="lang-menu-header">
+      <h3>Selecciona tu idioma</h3>
+      <button class="lang-menu-close" id="btnLangClose" aria-label="Cerrar">&times;</button>
+    </div>
+    <ul class="lang-list">
+      <li class="lang-item" data-lang="es">
+        <button type="button" class="lang-link">
+          <span class="lang-flag">🇪🇸</span>
+          <span class="lang-name">Español</span>
+        </button>
+      </li>
+      <li class="lang-item" data-lang="en">
+        <button type="button" class="lang-link">
+          <span class="lang-flag">🇬🇧</span>
+          <span class="lang-name">English</span>
+        </button>
+      </li>
+      <li class="lang-item" data-lang="de">
+        <button type="button" class="lang-link">
+          <span class="lang-flag">🇩🇪</span>
+          <span class="lang-name">Deutsch</span>
+        </button>
+      </li>
+      <li class="lang-item" data-lang="fr">
+        <button type="button" class="lang-link">
+          <span class="lang-flag">🇫🇷</span>
+          <span class="lang-name">Français</span>
+        </button>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style>
+/* --- OCULTAR ELEMENTOS DE GOOGLE TRANSLATE --- */
+#google_translate_element, 
+.skiptranslate, 
+.goog-te-banner-frame {
+  display: none !important;
+}
+body {
+  top: 0 !important; /* Evita que Google mueva el diseño hacia abajo */
+}
+
+/* --- ESTILOS GENERALES --- */
+:root {
+  --lang-bg: #ffffff;
+  --lang-text: #1a1a1a;
+  --lang-accent: #000000;
+}
+
+.btn-lang-toggle, 
+.lang-menu-wrapper {
+  display: none;
+}
+
+/* --- DISEÑO EXCLUSIVO PARA MÓVILES (< 768px) --- */
+@media (max-width: 767px) {
+  .btn-lang-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+    background-color: var(--lang-bg);
+    color: var(--lang-text);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    padding: 12px 18px;
+    border-radius: 30px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .lang-menu-wrapper {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    pointer-events: none;
+  }
+
+  .lang-menu-wrapper.is-open {
+    pointer-events: auto;
+  }
+
+  .lang-menu-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .lang-menu-wrapper.is-open .lang-menu-overlay {
+    opacity: 1;
+  }
+
+  .lang-menu-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--lang-bg);
+    border-radius: 24px 24px 0 0;
+    padding: 24px 24px max(24px, env(safe-area-inset-bottom));
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.32, 0.94, 0.6, 1);
+  }
+
+  .lang-menu-wrapper.is-open .lang-menu-content {
+    transform: translateY(0);
+  }
+
+  .lang-menu-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  .lang-menu-header h3 {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--lang-text);
+  }
+
+  .lang-menu-close {
+    background: #f5f5f7;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .lang-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .lang-link {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border: none;
+    background-color: #f9f9fb;
+    color: var(--lang-text);
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .lang-link:active {
+    background-color: #f0f0f4;
+  }
+
+  .lang-flag {
+    font-size: 20px;
+    margin-right: 14px;
+  }
+}
+</style>
+
+<script type="text/javascript">
+// 1. Inicializa el traductor de Google de forma silenciosa
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'es',
+    includedLanguages: 'es,en,de,fr',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const btnToggle = document.getElementById('btnLangToggle');
+  const btnClose = document.getElementById('btnLangClose');
+  const overlay = document.getElementById('langMenuOverlay');
+  const wrapper = document.getElementById('langMenuWrapper');
+  const langItems = document.querySelectorAll('.lang-item');
+
+  // Abrir y cerrar menú
+  const openMenu = () => { wrapper.classList.add('is-open'); document.body.style.overflow = 'hidden'; };
+  const closeMenu = () => { wrapper.classList.remove('is-open'); document.body.style.overflow = ''; };
+
+  btnToggle.addEventListener('click', openMenu);
+  btnClose.addEventListener('click', closeMenu);
+  overlay.addEventListener('click', closeMenu);
+
+  // 2. Simula el click en el selector oculto de Google cuando el usuario elige un idioma
+  langItems.forEach(item => {
+    item.addEventListener('click', () => {
+      const targetLang = item.getAttribute('data-lang');
+      const googleSelect = document.querySelector('.goog-te-combo');
+
+      if (googleSelect) {
+        googleSelect.value = targetLang;
+        // Dispara el evento de cambio para que Google procese la traducción
+        googleSelect.dispatchEvent(new Event('change'));
+      }
+      closeMenu();
+    });
+  });
+});
+</script>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Animación de revelación al hacer scroll (Intersection Observer)
+            const reveals = document.querySelectorAll('.reveal');
+            const revealOnScroll = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: "0px 0px -40px 0px" });
+
+            reveals.forEach(el => revealOnScroll.observe(el));
+
+            // 2. Efecto en la barra de navegación superior al bajar la página
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+
+            // 3. Resaltar dinámicamente el día actual en los horarios
+            const days = ['domingo', 'lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado'];
+            const todayName = days[new Date().getDay()];
+            document.querySelectorAll('.schedule-row').forEach(row => {
+                if (row.querySelector('.day').textContent.toLowerCase() === todayName) {
+                    row.classList.add('today');
+                    row.querySelector('.day').innerHTML += " (Hoy)";
+                }
+            });
+        });
+
+        // 4. Cambiar entre pestañas de la Carta de Menú
+        function openMenu(evt, categoryId) {
+            const containers = document.querySelectorAll('.menu-container');
+            containers.forEach(item => item.classList.remove('active'));
+
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(categoryId).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+    </script>
+</body>
+</html>
