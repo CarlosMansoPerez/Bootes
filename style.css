@@ -1,538 +1,588 @@
-        :root {
-            --bg-color: #faf8f5;       /* Blanco roto / Crema muy suave */
-            --bg-card: #f3efe9;        /* Beige claro para bloques de contraste */
-            --text-color: #1c231f;     /* Negro orgánico / Gris muy oscuro */
-            --accent-matcha: #7d9a7d;   /* Verde matcha suave y elegante */
-            --accent-matcha-dark: #587058;
-            --accent-coffee: #bfa580;   /* Beige café / Arena tostada */
-            --muted-text: #606864;      /* Texto secundario suavizado */
-            --spacing-xl: 140px;
-            --spacing-lg: 80px;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* --- EFECTOS DE ANIMACIÓN CON SCROLL --- */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .logo-icono{
-            width: 30px;
-            margin-bottom: -6px;
-            margin-right: 3px;
-        }
-
-        /* --- HEADER / NAVEGACIÓN --- */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            padding: 35px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 100;
-            transition: background 0.4s, padding 0.4s;
-        }
-
-        header.scrolled {
-            background: rgba(250, 248, 245, 0.92);
-            padding: 20px 5%;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0,0,0,0.03);
-        }
-
-        .logo {
-            font-family: 'Syne', sans-serif;
-            font-weight: 700;
-            font-size: 1.4rem;
-            letter-spacing: -0.5px;
-            color: var(--text-color);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--accent-matcha);
-        }
-
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-size: 0.85rem;
-            font-weight: 500;
-            margin-left: 35px;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--accent-matcha);
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0 5%;
-            position: relative;
-            background-color: var(--bg-card);
-        }
-
-        .hero-video-container {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-            overflow: hidden;
-        }
-
-        .hero-video-container::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(250,248,245,0.99) 100%);
-        }
-
-        .hero video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            max-width: 1000px;
-        }
-
-        .hero-content .tagline {
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 4px;
-            color: var(--accent-matcha-dark);
-            margin-bottom: 20px;
-            font-weight: 600;
-        }
-
-        .hero-content h1 {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(3.5rem, 9vw, 7.5rem);
-            font-weight: 800;
-            line-height: 0.9;
-            letter-spacing: -3px;
-            color: var(--text-color);
-            text-transform: uppercase;
-            margin-bottom: 35px;
-        }
-
-        .hero-content p {
-            font-size: clamp(1.1rem, 2vw, 1.4rem);
-            font-weight: 300;
-            max-width: 600px;
-            margin: 0 auto;
-            line-height: 1.6;
-            color: var(--muted-text);
-        }
-
-        /* --- SECTION ESTRUCTURA COMÚN --- */
-        section {
-            padding: var(--spacing-xl) 5%;
-        }
-
-        .section-title-center {
-            text-align: center;
-            max-width: 700px;
-            margin: 0 auto var(--spacing-lg) auto;
-        }
-
-        .section-title-center span {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--accent-matcha-dark);
-            font-weight: 600;
-            display: block;
-            margin-bottom: 15px;
-        }
-
-        .section-title-center h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: clamp(2.2rem, 4vw, 3.8rem);
-            line-height: 1.1;
-            letter-spacing: -1.5px;
-        }
-
-        /* --- SECCIÓN 1: EL CONCEPTO --- */
-        .concept {
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1.1fr;
-            gap: 120px;
-            align-items: center;
-        }
-
-        .concept-text h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 2.8rem;
-            line-height: 1.1;
-            margin-bottom: 35px;
-            letter-spacing: -1px;
-        }
-
-        .concept-text p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--muted-text);
-            margin-bottom: 25px;
-        }
-
-        .img-container {
-            position: relative;
-            overflow: hidden;
-            border-radius: 12px;
-        }
-
-        .img-container img {
-            width: 100%;
-            display: block;
-            transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .img-container:hover img {
-            transform: scale(1.05);
-        }
-
-        /* --- SECCIÓN 2: FILOSOFÍA MATCHA & COFFEE --- */
-        .philosophy {
-            background-color: var(--bg-card);
-        }
-
-        .split-benefits {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .benefit-card {
-            background: var(--bg-color);
-            padding: 60px;
-            border-radius: 16px;
-            transition: transform 0.4s;
-        }
-
-        .benefit-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .benefit-card .icon-label {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-            margin-bottom: 25px;
-            display: inline-block;
-            padding: 6px 16px;
-            border-radius: 30px;
-        }
-
-        .matcha-label { background: #eef4ee; color: var(--accent-matcha-dark); }
-        .coffee-label { background: #f6f0e5; color: #a48255; }
-
-        .benefit-card h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-
-        .benefit-card p {
-            color: var(--muted-text);
-            line-height: 1.7;
-            font-size: 1.05rem;
-        }
-
-        /* --- SECCIÓN 3: LA CARTA --- */
-        .menu-section {
-            max-width: 1300px;
-            margin: 0 auto;
-        }
-
-        .menu-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .tab-btn {
-            background: none;
-            border: none;
-            font-family: 'Syne', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            padding: 10px 20px;
-            cursor: pointer;
-            color: var(--muted-text);
-            position: relative;
-            transition: color 0.3s;
-        }
-
-        .tab-btn.active, .tab-btn:hover {
-            color: var(--text-color);
-        }
-
-        .tab-btn::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background-color: var(--accent-matcha);
-            transition: all 0.3s;
-            transform: translateX(-50%);
-        }
-
-        .tab-btn.active::after {
-            width: 80%;
-        }
-
-        .menu-container {
-            display: none;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px 100px;
-        }
-
-        .menu-container.active {
-            display: grid;
-        }
-
-        .menu-card-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            padding: 15px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.06);
-        }
-
-        .menu-details {
-            max-width: 75%;
-        }
-
-        .menu-details h4 {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            font-size: 1.15rem;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-
-        .menu-details p {
-            font-size: 0.95rem;
-            color: var(--muted-text);
-            line-height: 1.5;
-        }
-
-        .menu-price {
-            font-family: 'Syne', sans-serif;
-            font-weight: 700;
-            font-size: 1.15rem;
-            color: var(--accent-matcha-dark);
-        }
-
-        /* --- SECCIÓN 4: GALERÍA VISUAL --- */
-        .gallery {
-            padding-left: 2%;
-            padding-right: 2%;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 20px;
-        }
-
-        .gallery-grid .img-container {
-            aspect-ratio: 1/1;
-            border-radius: 8px;
-        }
-
-        .gallery-grid img {
-            height: 100%;
-            object-fit: cover;
-        }
-
-        /* --- SECCIÓN 5: UBICACIÓN Y HORARIO --- */
-        .visit {
-            background-color: var(--bg-card);
-            border-radius: 32px;
-            margin: 0 2% var(--spacing-lg) 2%;
-            padding: var(--spacing-lg) 6%;
-        }
-
-        .visit-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            align-items: start;
-        }
-
-        .visit-info h2 {
-            font-family: 'Syne', sans-serif;
-            font-size: 3.5rem;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin-bottom: 40px;
-        }
-
-        .info-block {
-            margin-bottom: 35px;
-        }
-
-        .info-block h3 {
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--accent-matcha-dark);
-            margin-bottom: 10px;
-        }
-
-        .info-block p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-        }
-
-        .btn-maps {
-            display: inline-block;
-            padding: 16px 36px;
-            border: 1px solid var(--text-color);
-            color: var(--text-color);
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 0.85rem;
-            font-weight: 600;
-            letter-spacing: 2px;
-            border-radius: 4px;
-            transition: all 0.4s;
-            margin-top: 15px;
-        }
-
-        .btn-maps:hover {
-            background-color: var(--text-color);
-            color: var(--bg-color);
-        }
-
-        .schedule-box {
-            background: var(--bg-color);
-            padding: 50px;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.01);
-        }
-
-        .schedule-box h3 {
-            font-family: 'Syne', sans-serif;
-            font-size: 1.4rem;
-            margin-bottom: 30px;
-            letter-spacing: -0.5px;
-        }
-
-        .schedule-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 16px 0;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
-            font-size: 1.05rem;
-        }
-
-        .schedule-row.today {
-            font-weight: 600;
-            color: var(--accent-matcha-dark);
-        }
-
-        .schedule-row .day {
-            text-transform: capitalize;
-        }
-
-        .schedule-notice {
-            margin-top: 25px;
-            font-size: 0.85rem;
-            color: var(--muted-text);
-            line-height: 1.5;
-            font-style: italic;
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            padding: 50px 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1400px;
-            margin: 0 auto;
-            font-size: 0.9rem;
-            color: var(--muted-text);
-            border-top: 1px solid rgba(0,0,0,0.04);
-            padding-bottom: 80px;
-        }
-
-        /* --- RESPONSIVE --- */
-        @media (max-width: 1024px) {
-            .grid-2, .visit-grid, .split-benefits, .menu-container {
-                grid-template-columns: 1fr;
-                gap: 50px;
-            }
-            .gallery-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            :root {
-                --spacing-xl: 90px;
-                --spacing-lg: 50px;
-            }
-            header nav {
-                display: none;
-            }
-            .visit {
-                padding: 40px 20px;
-            }
-            .schedule-box {
-                padding: 30px 20px;
-            }
-        }
+:root {
+    --bg-color: #faf8f5;       /* Blanco roto / Crema muy suave */
+    --bg-card: #f3efe9;        /* Beige claro para bloques de contraste */
+    --text-color: #1c231f;     /* Negro orgánico / Gris muy oscuro */
+    --accent-matcha: #7d9a7d;   /* Verde matcha suave y elegante */
+    --accent-matcha-dark: #587058;
+    --accent-coffee: #bfa580;   /* Beige café / Arena tostada */
+    --muted-text: #606864;      /* Texto secundario suavizado */
+    --spacing-xl: 140px;
+    --spacing-lg: 80px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- OPTIMIZACIÓN MUNDIAL PARA TRADUCTORES --- */
+p, h1, h2, h3, h4, h5, h6, span, a, button {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto; /* Corta palabras de idiomas largos (ej: Alemán) armónicamente con guiones */
+}
+
+/* Corrección de conflictos de posicionamiento causados por la barra superior de Google Translate */
+body {
+    top: 0 !important;
+    position: static !important;
+}
+.skiptranslate, #google_translate_element, .goog-te-banner-frame {
+    display: none !important;
+}
+
+/* --- EFECTOS DE ANIMACIÓN CON SCROLL --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1.4s cubic-bezier(0.16, 1, 0.3, 1), transform 1.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.logo-icono {
+    width: 30px;
+    margin-bottom: -6px;
+    margin-right: 3px;
+}
+
+/* --- HEADER / NAVEGACIÓN --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 35px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    transition: background 0.4s, padding 0.4s;
+}
+
+header.scrolled {
+    background: rgba(250, 248, 245, 0.92);
+    padding: 20px 5%;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.03);
+}
+
+.logo {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.4rem;
+    letter-spacing: -0.5px;
+    color: var(--text-color);
+    text-decoration: none;
+    white-space: nowrap; /* Evita que el logo se rompa en dos líneas al traducir */
+}
+
+.logo span {
+    color: var(--accent-matcha);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap; /* Permite flexibilidad si los textos del menú crecen */
+}
+
+nav a {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-left: 35px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-matcha);
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    min-height: 100vh; /* Cambiado de 'height' a 'min-height' para que crezca si el texto traducido se expande */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-xl) 5% 60px 5%; /* Añadido padding superior e inferior dinámico */
+    position: relative;
+    background-color: var(--bg-card);
+}
+
+.hero-video-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.hero-video-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.4) 50%, rgba(250,248,245,0.99) 100%);
+}
+
+.hero video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+}
+
+.hero-content .tagline {
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-matcha-dark);
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.hero-content h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.8rem, 8vw, 7.5rem); /* Ajustado ligeramente el mínimo inicial para pantallas móviles rígidas */
+    font-weight: 800;
+    line-height: 1.0; /* Subido ligeramente de 0.9 para dar aire a letras con tildes o diéresis */
+    letter-spacing: -2px;
+    color: var(--text-color);
+    text-transform: uppercase;
+    margin-bottom: 35px;
+}
+
+.hero-content p {
+    font-size: clamp(1.05rem, 2vw, 1.4rem);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: var(--muted-text);
+}
+
+/* --- SECTION ESTRUCTURA COMÚN --- */
+section {
+    padding: var(--spacing-xl) 5%;
+}
+
+.section-title-center {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto var(--spacing-lg) auto;
+}
+
+.section-title-center span {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--accent-matcha-dark);
+    font-weight: 600;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.section-title-center h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.0rem, 4vw, 3.8rem);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+}
+
+/* --- SECCIÓN 1: EL CONCEPTO --- */
+.concept {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 120px;
+    align-items: center;
+}
+
+.concept-text h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2.8rem;
+    line-height: 1.1;
+    margin-bottom: 35px;
+    letter-spacing: -1px;
+}
+
+.concept-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--muted-text);
+    margin-bottom: 25px;
+}
+
+.img-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.img-container img {
+    width: 100%;
+    display: block;
+    transition: transform 1.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.img-container:hover img {
+    transform: scale(1.05);
+}
+
+/* --- SECCIÓN 2: FILOSOFÍA MATCHA & COFFEE --- */
+.philosophy {
+    background-color: var(--bg-card);
+}
+
+.split-benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background: var(--bg-color);
+    padding: 60px;
+    border-radius: 16px;
+    transition: transform 0.4s;
+    min-height: auto; /* Garantiza adaptabilidad absoluta */
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+}
+
+.benefit-card .icon-label {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 25px;
+    display: inline-block;
+    padding: 6px 16px;
+    border-radius: 30px;
+}
+
+.matcha-label { background: #eef4ee; color: var(--accent-matcha-dark); }
+.coffee-label { background: #f6f0e5; color: #a48255; }
+
+.benefit-card h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.benefit-card p {
+    color: var(--muted-text);
+    line-height: 1.7;
+    font-size: 1.05rem;
+}
+
+/* --- SECCIÓN 3: LA CARTA --- */
+.menu-section {
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.menu-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap; /* Crucial para móviles si las traducciones de las pestañas crecen */
+}
+
+.tab-btn {
+    background: none;
+    border: none;
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 10px 20px;
+    cursor: pointer;
+    color: var(--muted-text);
+    position: relative;
+    transition: color 0.3s;
+}
+
+.tab-btn.active, .tab-btn:hover {
+    color: var(--text-color);
+}
+
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-matcha);
+    transition: all 0.3s;
+    transform: translateX(-50%);
+}
+
+.tab-btn.active::after {
+    width: 80%;
+}
+
+.menu-container {
+    display: none;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 100px;
+}
+
+.menu-container.active {
+    display: grid;
+}
+
+.menu-card-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    gap: 15px; /* Evita que los textos choquen con el precio */
+}
+
+.menu-details {
+    flex: 1; /* Permite que el texto tome el espacio disponible fluidamente */
+}
+
+.menu-details h4 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+.menu-details p {
+    font-size: 0.95rem;
+    color: var(--muted-text);
+    line-height: 1.5;
+}
+
+.menu-price {
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--accent-matcha-dark);
+    white-space: nowrap; /* Impide que el símbolo de € o el precio bajen de línea */
+}
+
+/* --- SECCIÓN 4: GALERÍA VISUAL --- */
+.gallery {
+    padding-left: 2%;
+    padding-right: 2%;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.gallery-grid .img-container {
+    aspect-ratio: 1/1;
+    border-radius: 8px;
+}
+
+.gallery-grid img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+/* --- SECCIÓN 5: UBICACIÓN Y HORARIO --- */
+.visit {
+    background-color: var(--bg-card);
+    border-radius: 32px;
+    margin: 0 2% var(--spacing-lg) 2%;
+    padding: var(--spacing-lg) 6%;
+}
+
+.visit-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px;
+    align-items: start;
+}
+
+.visit-info h2 {
+    font-family: 'Syne', sans-serif;
+    font-size: 3.5rem;
+    line-height: 1.1;
+    letter-spacing: -2px;
+    margin-bottom: 40px;
+}
+
+.info-block {
+    margin-bottom: 35px;
+}
+
+.info-block h3 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent-matcha-dark);
+    margin-bottom: 10px;
+}
+
+.info-block p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+.btn-maps {
+    display: inline-block;
+    padding: 16px 36px;
+    border: 1px solid var(--text-color);
+    color: var(--text-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 4px;
+    transition: all 0.4s;
+    margin-top: 15px;
+    white-space: nowrap;
+}
+
+.btn-maps:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+}
+
+.schedule-box {
+    background: var(--bg-color);
+    padding: 50px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.01);
+}
+
+.schedule-box h3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    letter-spacing: -0.5px;
+}
+
+.schedule-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    font-size: 1.05rem;
+    gap: 10px;
+}
+
+.schedule-row.today {
+    font-weight: 600;
+    color: var(--accent-matcha-dark);
+}
+
+.schedule-row .day {
+    text-transform: capitalize;
+}
+
+.schedule-notice {
+    margin-top: 25px;
+    font-size: 0.85rem;
+    color: var(--muted-text);
+    line-height: 1.5;
+    font-style: italic;
+}
+
+/* --- FOOTER --- */
+footer {
+    padding: 50px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    font-size: 0.9rem;
+    color: var(--muted-text);
+    border-top: 1px solid rgba(0,0,0,0.04);
+    padding-bottom: 80px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* --- RESPONSIVE / MEDIA QUERIES --- */
+@media (max-width: 1024px) {
+    .grid-2, .visit-grid, .split-benefits, .menu-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    nav a {
+        margin-left: 20px; /* Reducido espacio lateral en tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --spacing-xl: 90px;
+        --spacing-lg: 50px;
+    }
+    header {
+        padding: 20px 5%; /* Forzado padding cómodo en móviles desde el inicio */
+    }
+    header nav {
+        display: none;
+    }
+    .visit {
+        padding: 40px 20px;
+        margin: 0 0 var(--spacing-lg) 0; /* Eliminado margen lateral exterior */
+        border-radius: 0; /* Se adapta a pantalla completa en móvil elegantemente */
+    }
+    .schedule-box {
+        padding: 30px 20px;
+    }
+    .benefit-card {
+        padding: 40px 25px; /* Compresión de padding en tarjetas de beneficios */
+    }
+    footer {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+}
